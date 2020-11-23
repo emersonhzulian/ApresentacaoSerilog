@@ -1,0 +1,17 @@
+1 Setup do serilog
+    - Packages modulares
+    - serilog.aspnetcore - core para netcore
+    - serilog.settings.configuration - traz extensoes para configuracao 
+
+
+
+links:
+https://github.com/serilog/serilog/wiki/Configuration-Basics#overriding-per-sink
+    --Minimum level
+
+https://www.ctrlaltdan.com/2018/08/14/custom-serilog-enrichers/
+
+
+
+
+docker run -d --restart unless-stopped --name seq -e ACCEPT_EULA=Y -v C:\logs:/data -p 8081:80 datalust/seq:latest
