@@ -13,11 +13,6 @@ namespace Serilog.Api.SerilogEnrichers
     {
         public const string PropertyName = "ReleaseNumber";
 
-        /// <summary>
-        /// Enrich the log event.
-        /// </summary>
-        /// <param name="logEvent">The log event to enrich.</param>
-        /// <param name="propertyFactory">Factory for creating new properties to add to the event.</param>
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
         {
             var value = Environment.GetEnvironmentVariable("RELEASE_NUMBER") ?? "local";

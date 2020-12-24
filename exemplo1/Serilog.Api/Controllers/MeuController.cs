@@ -11,13 +11,6 @@ namespace Serilog.Api.Controllers
     [Route("[controller]")]
     public class MeuController : ControllerBase
     {
-        // private readonly ILogger<MeuController> _logger;
-
-        // public MeuController(ILogger<MeuController> logger)
-        // {
-        //     _logger = logger;
-        // }
-
         [HttpGet]
         [Route("ExemploSimples")]
         public IActionResult ExemploSimples([FromServices] ILogger<MeuController> _logger)
@@ -26,7 +19,7 @@ namespace Serilog.Api.Controllers
             
             try
             {
-                for(int i =0; i< 100; i++)
+                for(int i = 0; i< 100; i++)
                 {
                     if(i == 20)
                     {
@@ -42,14 +35,8 @@ namespace Serilog.Api.Controllers
             {
                 _logger.LogError(ex, "Ocorreu um erro no endpoint.");
             }
+            
             return Ok();
-        }
-
-        [HttpGet]
-        [Route("RetornaErro")]
-        public IActionResult RetornaErro([FromServices] ILogger<MeuController> _logger)
-        {
-            return StatusCode(500);
         }
     }
 }
